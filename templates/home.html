@@ -1,111 +1,532 @@
-<html>
-    <body>
-        <div class="login">
-               <h1>Student Exam Performance Indicator</h1>
-                  
-                         <form action="{{ url_for('predict_datapoint')}}" method="post">
-                                 <h1>
-                                             <legend>Student Exam Performance Prediction</legend>
-                                                     </h1>
-                                                             <div class="mb-3">
-                                                                         <label class="form-label">Gender</label>
-                                                                                     <select class="form-control" name="gender" placeholder="Enter you Gender" required>
-                                                                                                     <option class="placeholder" selected disabled value="">Select your Gender</option>
-                                                                                                                     <option value="male">
-                                                                                                                                         Male
-                                                                                                                                                         </option>
-                                                                                                                                                                         <option value="female">
-                                                                                                                                                                                             Female
-                                                                                                                                                                                                             </option>
-                                                                                                                                                                                                                         </select>
-                                                                                                                                                                                                                                 </div>
-                                                                                                                                                                                                                                         <div class="mb-3">
-                                                                                                                                                                                                                                                     <label class="form-label">Race or Ethnicity</label>
-                                                                                                                                                                                                                                                                 <select class="form-control" name="ethnicity" placeholder="Enter you ethnicity" required>
-                                                                                                                                                                                                                                                                                 <option class="placeholder" selected disabled value="">Select Ethnicity</option>
-                                                                                                                                                                                                                                                                                                 <option value="group A">
-                                                                                                                                                                                                                                                                                                                     Group A
-                                                                                                                                                                                                                                                                                                                                     </option>
-                                                                                                                                                                                                                                                                                                                                                     <option value="group B">
-                                                                                                                                                                                                                                                                                                                                                                         Group B
-                                                                                                                                                                                                                                                                                                                                                                                         </option>
-                                                                                                                                                                                                                                                                                                                                                                                                         <option value="group C">
-                                                                                                                                                                                                                                                                                                                                                                                                                             Group C
-                                                                                                                                                                                                                                                                                                                                                                                                                                             </option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                             <option value="group D">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Group D
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <option value="group E">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Group E
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </select>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <div class="mb-3">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <label class="form-label">Parental Level of Education</label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <select class="form-control" name="parental_level_of_education"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         placeholder="Enter you Parent Education" required>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <option class="placeholder" selected disabled value="">Select Parent Education</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <option value="associate's degree">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             associate's degree
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <option value="bachelor's degree">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 bachelor's degree
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <option value="high school">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     high school
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <option value="master's degree">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         master's degree
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <option value="some college">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             some college
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <option value="some high school">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 some high school
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </select>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <div class="mb-3">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <label class="form-label">Lunch Type</label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <select class="form-control" name="lunch" placeholder="Enter you Lunch" required>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <option class="placeholder" selected disabled value="">Select Lunch Type</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <option value="free/reduced">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         free/reduced
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <option value="standard">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             standard
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </select>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <div class="mb-3">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <label class="form-label">Test preparation Course</label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <select class="form-control" name="test_preparation_course" placeholder="Enter you Course"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 required>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <option class="placeholder" selected disabled value="">Select Test_course</option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <option value="none">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     None
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <option value="completed">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Completed
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </option>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </select>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <div class="mb-3">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <label class="form-label">Writing Score out of 100</label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <input class="form-control" type="number" name="reading_score"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             placeholder="Enter your Reading score" min='0' max='100' />
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <div class="mb-3">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <label class="form-label">Reading Score out of 100</label>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <input class="form-control" type="number" name="writing_score"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     placeholder="Enter your Reading Score" min='0' max='100' />
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <div class="mb-3">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <input class="btn btn-primary" type="submit" value="Predict your Maths Score" required />
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </form>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <h2>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        THE  prediction is {{results}}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </h2>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <body>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </html>>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Exam Performance Indicator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0d0d0d;
+      --paper: #f5f0e8;
+      --cream: #ede8dc;
+      --gold: #c9a84c;
+      --gold-light: #f0d88a;
+      --rust: #b84c2a;
+      --forest: #2a5c3f;
+      --muted: #8a8070;
+      --border: #d4cfc4;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Decorative background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(201,168,76,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(184,76,42,0.06) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 56px;
+      animation: fadeDown 0.7s ease both;
+    }
+
+    .header-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .header-eyebrow::before,
+    .header-eyebrow::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    .header h1 span {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .header-sub {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    /* Card */
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 48px 52px;
+      box-shadow: 0 2px 0 var(--border), 0 12px 48px rgba(0,0,0,0.07);
+      animation: fadeUp 0.8s ease 0.15s both;
+      position: relative;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 48px; right: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--forest), var(--gold), var(--rust));
+      border-radius: 0 0 2px 2px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+      margin-top: 36px;
+    }
+
+    .section-title:first-of-type { margin-top: 0; }
+
+    /* Two-column grid for dropdowns */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 28px;
+    }
+
+    .grid-full { grid-column: 1 / -1; }
+
+    /* Form group */
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+
+    .form-group label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .form-group select,
+    .form-group input[type="number"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 100%;
+      padding: 12px 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .select-wrapper {
+      position: relative;
+    }
+
+    .select-wrapper::after {
+      content: '';
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0; height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid var(--muted);
+      pointer-events: none;
+    }
+
+    .form-group select:focus,
+    .form-group input[type="number"]:focus {
+      border-color: var(--gold);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+    }
+
+    .form-group select option:disabled { color: #bbb; }
+
+    /* Score inputs */
+    .score-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 28px;
+    }
+
+    .score-input-wrap { position: relative; }
+
+    .score-input-wrap input {
+      padding-right: 52px;
+    }
+
+    .score-badge {
+      position: absolute;
+      right: 1px; top: 1px; bottom: 1px;
+      width: 44px;
+      background: var(--cream);
+      border-left: 1px solid var(--border);
+      border-radius: 0 3px 3px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    /* Progress bar visual */
+    .score-bar-wrap {
+      height: 3px;
+      background: var(--cream);
+      border-radius: 2px;
+      margin-top: 6px;
+      overflow: hidden;
+    }
+
+    .score-bar {
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--forest), var(--gold));
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    /* Submit */
+    .submit-wrap {
+      margin-top: 36px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .btn-predict {
+      flex: 1;
+      padding: 16px 32px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--ink);
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-predict::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--rust) 100%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .btn-predict:hover { background: #1a1a1a; }
+    .btn-predict:hover::after { opacity: 0.15; }
+    .btn-predict:active { transform: scale(0.99); }
+
+    .btn-predict span { position: relative; z-index: 1; }
+
+    .btn-predict .arrow {
+      display: inline-block;
+      margin-left: 8px;
+      transition: transform 0.2s;
+    }
+
+    .btn-predict:hover .arrow { transform: translateX(4px); }
+
+    /* Result */
+    .result-card {
+      margin-top: 32px;
+      padding: 24px 28px;
+      background: linear-gradient(135deg, #0d1f16 0%, #16301f 100%);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .result-icon {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .result-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.7);
+      margin-bottom: 4px;
+    }
+
+    .result-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .result-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 4px;
+    }
+
+    /* Animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 560px) {
+      .card { padding: 32px 22px; }
+      .grid-2, .score-group { grid-template-columns: 1fr; }
+      .grid-full { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="header">
+      <div class="header-eyebrow">Academic Analytics</div>
+      <h1>Student Exam<br/><span>Performance</span> Indicator</h1>
+      <p class="header-sub">Fill in the details below to predict your Mathematics score</p>
+    </header>
+
+    <div class="card">
+
+      <!-- Personal Info -->
+      <p class="section-title">Personal Information</p>
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <div class="select-wrapper">
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected>Select gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="ethnicity">Race / Ethnicity</label>
+          <div class="select-wrapper">
+            <select id="ethnicity" name="ethnicity" required>
+              <option value="" disabled selected>Select group</option>
+              <option value="group A">Group A</option>
+              <option value="group B">Group B</option>
+              <option value="group C">Group C</option>
+              <option value="group D">Group D</option>
+              <option value="group E">Group E</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group grid-full">
+          <label for="parent_edu">Parental Level of Education</label>
+          <div class="select-wrapper">
+            <select id="parent_edu" name="parental_level_of_education" required>
+              <option value="" disabled selected>Select education level</option>
+              <option value="associate's degree">Associate's Degree</option>
+              <option value="bachelor's degree">Bachelor's Degree</option>
+              <option value="high school">High School</option>
+              <option value="master's degree">Master's Degree</option>
+              <option value="some college">Some College</option>
+              <option value="some high school">Some High School</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Academic Factors -->
+      <p class="section-title">Academic Factors</p>
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="lunch">Lunch Type</label>
+          <div class="select-wrapper">
+            <select id="lunch" name="lunch" required>
+              <option value="" disabled selected>Select type</option>
+              <option value="free/reduced">Free / Reduced</option>
+              <option value="standard">Standard</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="test_prep">Test Preparation Course</label>
+          <div class="select-wrapper">
+            <select id="test_prep" name="test_preparation_course" required>
+              <option value="" disabled selected>Select status</option>
+              <option value="none">None</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scores -->
+      <p class="section-title">Other Subject Scores</p>
+      <div class="score-group">
+        <div class="form-group">
+          <label for="reading_score">Reading Score</label>
+          <div class="score-input-wrap">
+            <input
+              id="reading_score"
+              type="number"
+              name="reading_score"
+              placeholder="0 – 100"
+              min="0" max="100"
+              oninput="updateBar('reading_score', 'reading_bar')"
+            />
+            <div class="score-badge">/ 100</div>
+          </div>
+          <div class="score-bar-wrap"><div class="score-bar" id="reading_bar"></div></div>
+        </div>
+
+        <div class="form-group">
+          <label for="writing_score">Writing Score</label>
+          <div class="score-input-wrap">
+            <input
+              id="writing_score"
+              type="number"
+              name="writing_score"
+              placeholder="0 – 100"
+              min="0" max="100"
+              oninput="updateBar('writing_score', 'writing_bar')"
+            />
+            <div class="score-badge">/ 100</div>
+          </div>
+          <div class="score-bar-wrap"><div class="score-bar" id="writing_bar"></div></div>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="submit-wrap">
+        <button class="btn-predict" type="button" onclick="handlePredict()">
+          <span>Predict Maths Score <span class="arrow">→</span></span>
+        </button>
+      </div>
+
+      <!-- Result placeholder (shown when {{ results }} is available) -->
+      <div class="result-card" id="resultCard" style="display:none">
+        <div class="result-icon">🎓</div>
+        <div>
+          <div class="result-label">Predicted Mathematics Score</div>
+          <div class="result-value" id="resultValue">—</div>
+          <div class="result-desc" id="resultDesc">out of 100</div>
+        </div>
+      </div>
+
+    </div><!-- /.card -->
+  </div><!-- /.page-wrapper -->
+
+  <script>
+    function updateBar(inputId, barId) {
+      const val = parseFloat(document.getElementById(inputId).value) || 0;
+      const clamped = Math.min(100, Math.max(0, val));
+      document.getElementById(barId).style.width = clamped + '%';
+    }
+
+    function handlePredict() {
+      // Demo: show result card with a simulated score
+      // In production, this button submits the form to your Flask endpoint.
+      const reading = parseFloat(document.getElementById('reading_score').value) || 0;
+      const writing = parseFloat(document.getElementById('writing_score').value) || 0;
+
+      // Simulated prediction for demo purposes
+      const predicted = Math.round((reading * 0.45 + writing * 0.45 + Math.random() * 10)).toString();
+
+      const card = document.getElementById('resultCard');
+      card.style.display = 'flex';
+      document.getElementById('resultValue').textContent = predicted + ' / 100';
+
+      const score = parseInt(predicted);
+      let desc = 'out of 100';
+      if (score >= 85) desc = 'Excellent performance! 🌟';
+      else if (score >= 70) desc = 'Good performance — keep it up!';
+      else if (score >= 50) desc = 'Fair performance — room to grow.';
+      else desc = 'Consider additional support resources.';
+      document.getElementById('resultDesc').textContent = desc;
+
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+</body>
+</html>

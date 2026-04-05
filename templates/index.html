@@ -1,4 +1,281 @@
-<h1>Welcome to the home page</h1>
-<a href="/predictdata">
-    <button>Predict Student Score</button>
-</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Exam Performance Indicator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fafaf8;
+      --ink: #1a1a18;
+      --muted: #9a9890;
+      --accent: #3d6b52;
+      --border: #e8e6e0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Nav */
+    nav {
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      animation: fadeDown 0.5s ease both;
+    }
+
+    .nav-logo {
+      font-family: 'Lora', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-badge {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 5px 12px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    /* Main */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+
+    .center {
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      animation: fadeDown 0.5s ease 0.1s both;
+    }
+
+    h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+      margin-bottom: 20px;
+      animation: fadeDown 0.6s ease 0.15s both;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 44px;
+      animation: fadeUp 0.6s ease 0.25s both;
+    }
+
+    /* CTA */
+    .btn-wrap { animation: fadeUp 0.6s ease 0.35s both; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 36px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: #fff;
+      background: var(--accent);
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 2px 12px rgba(61,107,82,0.25);
+    }
+
+    .btn:hover {
+      background: #2f5440;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(61,107,82,0.3);
+    }
+
+    .btn:active { transform: translateY(0); }
+
+    .btn-arrow { display: inline-block; transition: transform 0.2s; }
+    .btn:hover .btn-arrow { transform: translateX(3px); }
+
+    .hint {
+      display: block;
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--muted);
+      animation: fadeUp 0.6s ease 0.45s both;
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 52px 0 36px;
+      animation: fadeIn 0.8s ease 0.5s both;
+    }
+
+    .divider-line { flex: 1; height: 1px; background: var(--border); }
+    .divider-text {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Pills */
+    .pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      animation: fadeUp 0.7s ease 0.55s both;
+    }
+
+    .pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: #fff;
+      font-size: 13px;
+      color: var(--ink);
+    }
+
+    .pill-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.6;
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      animation: fadeIn 0.8s ease 0.6s both;
+    }
+
+    .footer-text { font-size: 12px; color: var(--muted); }
+
+    .footer-link {
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @media (max-width: 520px) {
+      nav { padding: 20px 24px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Exam<span>IQ</span></div>
+    <div class="nav-badge">Academic Analytics</div>
+  </nav>
+
+  <main>
+    <div class="center">
+
+      <span class="tag">Welcome</span>
+
+      <h1>Predict your<br/><em>Maths Score</em><br/>in seconds</h1>
+
+      <p>Enter your academic profile and let our machine learning model estimate your Mathematics exam performance instantly.</p>
+
+      <div class="btn-wrap">
+        <a href="/predictdata" class="btn">
+          Predict Student Score <span class="btn-arrow">→</span>
+        </a>
+        <span class="hint">No account needed · Free to use</span>
+      </div>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <span class="divider-text">What we analyse</span>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="pills">
+        <div class="pill"><div class="pill-dot"></div> Gender</div>
+        <div class="pill"><div class="pill-dot"></div> Ethnicity</div>
+        <div class="pill"><div class="pill-dot"></div> Parent Education</div>
+        <div class="pill"><div class="pill-dot"></div> Lunch Type</div>
+        <div class="pill"><div class="pill-dot"></div> Test Prep Course</div>
+        <div class="pill"><div class="pill-dot"></div> Reading & Writing</div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <span class="footer-text">© 2026 ExamIQ · Student Performance Indicator</span>
+    <a href="/predictdata" class="footer-link">Get started →</a>
+  </footer>
+
+</body>
+</html>
