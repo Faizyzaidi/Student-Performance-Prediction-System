@@ -14,6 +14,8 @@ A machine learning web app that predicts student performance based on study hour
 | Production server | Gunicorn | WSGI deployment |
 
 ## Project structure
+## Project structure
+```
 mlproject/
 ├── artifacts/          # Saved models and preprocessors
 ├── notebook/           # Jupyter notebooks for EDA
@@ -23,10 +25,15 @@ mlproject/
 ├── templates/
 │   ├── index.html      # Landing page
 │   └── home.html       # Prediction form
+├── images/             # Screenshots
+│   ├── home.png
+│   └── prediction.png
 ├── app.py              # Flask application entry point
-├── requirements.txt
-├── setup.py
-└── README.md
+├── requirements.txt    # Dependencies
+├── setup.py            # Package setup
+└── README.md           # Project documentation
+```
+
 ## Getting started
 ```bash
 pip install -r requirements.txt   # install dependencies
