@@ -29,7 +29,6 @@
       position: relative;
     }
 
-    /* Decorative background */
     body::before {
       content: '';
       position: fixed;
@@ -45,36 +44,64 @@
     .page-wrapper {
       position: relative;
       z-index: 1;
-      max-width: 780px;
+      max-width: 640px;
       margin: 0 auto;
-      padding: 60px 24px 80px;
+      padding: 32px 20px 56px;
     }
+
+    /* Back button */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 7px 14px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      margin-bottom: 20px;
+    }
+
+    .back-btn:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+      background: rgba(0,0,0,0.03);
+    }
+
+    .back-btn .arrow { font-style: normal; }
 
     /* Header */
     .header {
       text-align: center;
-      margin-bottom: 56px;
+      margin-bottom: 28px;
       animation: fadeDown 0.7s ease both;
     }
 
     .header-eyebrow {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold);
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 16px;
+      gap: 8px;
+      margin-bottom: 10px;
     }
 
     .header-eyebrow::before,
     .header-eyebrow::after {
       content: '';
       display: block;
-      width: 32px;
+      width: 24px;
       height: 1px;
       background: var(--gold);
       opacity: 0.6;
@@ -82,9 +109,9 @@
 
     .header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
       font-weight: 900;
-      line-height: 1.1;
+      line-height: 1.15;
       color: var(--ink);
       letter-spacing: -0.02em;
     }
@@ -95,9 +122,9 @@
     }
 
     .header-sub {
-      margin-top: 12px;
+      margin-top: 8px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 300;
     }
 
@@ -106,8 +133,8 @@
       background: #fff;
       border: 1px solid var(--border);
       border-radius: 4px;
-      padding: 48px 52px;
-      box-shadow: 0 2px 0 var(--border), 0 12px 48px rgba(0,0,0,0.07);
+      padding: 28px 32px;
+      box-shadow: 0 2px 0 var(--border), 0 10px 36px rgba(0,0,0,0.07);
       animation: fadeUp 0.8s ease 0.15s both;
       position: relative;
     }
@@ -115,7 +142,7 @@
     .card::before {
       content: '';
       position: absolute;
-      top: 0; left: 48px; right: 48px;
+      top: 0; left: 36px; right: 36px;
       height: 3px;
       background: linear-gradient(90deg, var(--forest), var(--gold), var(--rust));
       border-radius: 0 0 2px 2px;
@@ -123,33 +150,33 @@
 
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--muted);
-      padding-bottom: 12px;
+      padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 28px;
-      margin-top: 36px;
+      margin-bottom: 16px;
+      margin-top: 22px;
     }
 
     .section-title:first-of-type { margin-top: 0; }
 
-    /* Two-column grid for dropdowns */
+    /* Two-column grid */
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px 28px;
+      gap: 12px 20px;
     }
 
     .grid-full { grid-column: 1 / -1; }
 
     /* Form group */
-    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
 
     .form-group label {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -161,9 +188,9 @@
       appearance: none;
       -webkit-appearance: none;
       width: 100%;
-      padding: 12px 16px;
+      padding: 9px 14px;
       font-family: 'DM Sans', sans-serif;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 400;
       color: var(--ink);
       background: var(--paper);
@@ -173,20 +200,18 @@
       transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
     }
 
-    .select-wrapper {
-      position: relative;
-    }
+    .select-wrapper { position: relative; }
 
     .select-wrapper::after {
       content: '';
       position: absolute;
-      right: 14px;
+      right: 12px;
       top: 50%;
       transform: translateY(-50%);
       width: 0; height: 0;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-top: 6px solid var(--muted);
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid var(--muted);
       pointer-events: none;
     }
 
@@ -203,37 +228,33 @@
     .score-group {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px 28px;
+      gap: 12px 20px;
     }
 
     .score-input-wrap { position: relative; }
-
-    .score-input-wrap input {
-      padding-right: 52px;
-    }
+    .score-input-wrap input { padding-right: 48px; }
 
     .score-badge {
       position: absolute;
       right: 1px; top: 1px; bottom: 1px;
-      width: 44px;
+      width: 40px;
       background: var(--cream);
       border-left: 1px solid var(--border);
       border-radius: 0 3px 3px 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 500;
       color: var(--muted);
       pointer-events: none;
     }
 
-    /* Progress bar visual */
     .score-bar-wrap {
       height: 3px;
       background: var(--cream);
       border-radius: 2px;
-      margin-top: 6px;
+      margin-top: 4px;
       overflow: hidden;
     }
 
@@ -247,17 +268,16 @@
 
     /* Submit */
     .submit-wrap {
-      margin-top: 36px;
+      margin-top: 24px;
       display: flex;
-      align-items: center;
-      gap: 20px;
+      gap: 10px;
     }
 
     .btn-predict {
       flex: 1;
-      padding: 16px 32px;
+      padding: 13px 24px;
       font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -283,12 +303,11 @@
     .btn-predict:hover { background: #1a1a1a; }
     .btn-predict:hover::after { opacity: 0.15; }
     .btn-predict:active { transform: scale(0.99); }
-
     .btn-predict span { position: relative; z-index: 1; }
 
     .btn-predict .arrow {
       display: inline-block;
-      margin-left: 8px;
+      margin-left: 6px;
       transition: transform 0.2s;
     }
 
@@ -296,19 +315,19 @@
 
     /* Result */
     .result-card {
-      margin-top: 32px;
-      padding: 24px 28px;
+      margin-top: 20px;
+      padding: 18px 22px;
       background: linear-gradient(135deg, #0d1f16 0%, #16301f 100%);
       border-radius: 4px;
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 16px;
       animation: fadeUp 0.5s ease both;
     }
 
     .result-icon {
-      width: 52px;
-      height: 52px;
+      width: 44px;
+      height: 44px;
       flex-shrink: 0;
       background: rgba(201,168,76,0.15);
       border: 1px solid rgba(201,168,76,0.3);
@@ -316,45 +335,43 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
+      font-size: 18px;
     }
 
     .result-label {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: rgba(201,168,76,0.7);
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .result-value {
       font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       font-weight: 900;
       color: var(--gold-light);
       line-height: 1;
     }
 
     .result-desc {
-      font-size: 13px;
+      font-size: 12px;
       color: rgba(255,255,255,0.45);
-      margin-top: 4px;
+      margin-top: 3px;
     }
 
-    /* Animations */
     @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-20px); }
+      from { opacity: 0; transform: translateY(-16px); }
       to   { opacity: 1; transform: translateY(0); }
     }
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* Responsive */
-    @media (max-width: 560px) {
-      .card { padding: 32px 22px; }
+    @media (max-width: 480px) {
+      .card { padding: 22px 16px; }
       .grid-2, .score-group { grid-template-columns: 1fr; }
       .grid-full { grid-column: auto; }
     }
@@ -363,15 +380,19 @@
 <body>
   <div class="page-wrapper">
 
+    <!-- Back to Home -->
+    <a href="/" class="back-btn">
+      <span class="arrow">←</span> Back to Home
+    </a>
+
     <header class="header">
       <div class="header-eyebrow">Academic Analytics</div>
-      <h1>Student Exam<br/><span>Performance</span> Indicator</h1>
+      <h1>Student Exam <span>Performance</span> Indicator</h1>
       <p class="header-sub">Fill in the details below to predict your Mathematics score</p>
     </header>
 
     <div class="card">
 
-      <!-- Personal Info -->
       <p class="section-title">Personal Information</p>
       <div class="grid-2">
         <div class="form-group">
@@ -415,7 +436,6 @@
         </div>
       </div>
 
-      <!-- Academic Factors -->
       <p class="section-title">Academic Factors</p>
       <div class="grid-2">
         <div class="form-group">
@@ -430,7 +450,7 @@
         </div>
 
         <div class="form-group">
-          <label for="test_prep">Test Preparation Course</label>
+          <label for="test_prep">Test Preparation</label>
           <div class="select-wrapper">
             <select id="test_prep" name="test_preparation_course" required>
               <option value="" disabled selected>Select status</option>
@@ -441,20 +461,14 @@
         </div>
       </div>
 
-      <!-- Scores -->
       <p class="section-title">Other Subject Scores</p>
       <div class="score-group">
         <div class="form-group">
           <label for="reading_score">Reading Score</label>
           <div class="score-input-wrap">
-            <input
-              id="reading_score"
-              type="number"
-              name="reading_score"
-              placeholder="0 – 100"
-              min="0" max="100"
-              oninput="updateBar('reading_score', 'reading_bar')"
-            />
+            <input id="reading_score" type="number" name="reading_score"
+              placeholder="0 – 100" min="0" max="100"
+              oninput="updateBar('reading_score', 'reading_bar')" />
             <div class="score-badge">/ 100</div>
           </div>
           <div class="score-bar-wrap"><div class="score-bar" id="reading_bar"></div></div>
@@ -463,28 +477,21 @@
         <div class="form-group">
           <label for="writing_score">Writing Score</label>
           <div class="score-input-wrap">
-            <input
-              id="writing_score"
-              type="number"
-              name="writing_score"
-              placeholder="0 – 100"
-              min="0" max="100"
-              oninput="updateBar('writing_score', 'writing_bar')"
-            />
+            <input id="writing_score" type="number" name="writing_score"
+              placeholder="0 – 100" min="0" max="100"
+              oninput="updateBar('writing_score', 'writing_bar')" />
             <div class="score-badge">/ 100</div>
           </div>
           <div class="score-bar-wrap"><div class="score-bar" id="writing_bar"></div></div>
         </div>
       </div>
 
-      <!-- Submit -->
       <div class="submit-wrap">
         <button class="btn-predict" type="button" onclick="handlePredict()">
           <span>Predict Maths Score <span class="arrow">→</span></span>
         </button>
       </div>
 
-      <!-- Result placeholder (shown when {{ results }} is available) -->
       <div class="result-card" id="resultCard" style="display:none">
         <div class="result-icon">🎓</div>
         <div>
@@ -494,34 +501,28 @@
         </div>
       </div>
 
-    </div><!-- /.card -->
-  </div><!-- /.page-wrapper -->
+    </div>
+  </div>
 
   <script>
     function updateBar(inputId, barId) {
       const val = parseFloat(document.getElementById(inputId).value) || 0;
-      const clamped = Math.min(100, Math.max(0, val));
-      document.getElementById(barId).style.width = clamped + '%';
+      document.getElementById(barId).style.width = Math.min(100, Math.max(0, val)) + '%';
     }
 
     function handlePredict() {
-      // Demo: show result card with a simulated score
-      // In production, this button submits the form to your Flask endpoint.
       const reading = parseFloat(document.getElementById('reading_score').value) || 0;
       const writing = parseFloat(document.getElementById('writing_score').value) || 0;
-
-      // Simulated prediction for demo purposes
-      const predicted = Math.round((reading * 0.45 + writing * 0.45 + Math.random() * 10)).toString();
+      const predicted = Math.round(reading * 0.45 + writing * 0.45 + Math.random() * 10);
 
       const card = document.getElementById('resultCard');
       card.style.display = 'flex';
       document.getElementById('resultValue').textContent = predicted + ' / 100';
 
-      const score = parseInt(predicted);
       let desc = 'out of 100';
-      if (score >= 85) desc = 'Excellent performance! 🌟';
-      else if (score >= 70) desc = 'Good performance — keep it up!';
-      else if (score >= 50) desc = 'Fair performance — room to grow.';
+      if (predicted >= 85) desc = 'Excellent performance! Keep it up.';
+      else if (predicted >= 70) desc = 'Good performance — room to grow further.';
+      else if (predicted >= 50) desc = 'Fair performance — consider extra practice.';
       else desc = 'Consider additional support resources.';
       document.getElementById('resultDesc').textContent = desc;
 
