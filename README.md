@@ -1,6 +1,9 @@
-# Student Performance Prediction System
+# 🎓 Student Performance Prediction System
 
 A machine learning web app that predicts student performance based on study hours, prior scores, and contextual factors.
+
+🌐 **Live Demo:**  
+https://student-performance-prediction-system-jdfh.onrender.com/
 
 ## Tech stack
 
